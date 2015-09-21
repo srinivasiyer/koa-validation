@@ -14,6 +14,7 @@
   "author": "Srinivas Iyer",
   "license": "ISC",
   "dependencies": {
+    "co-fs": "^1.2.0",
     "moment": "^2.10.6",
     "validator": "^4.0.5"
   }
