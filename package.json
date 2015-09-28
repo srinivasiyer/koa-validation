@@ -18,5 +18,13 @@
     "mime-types": "^2.1.7",
     "moment": "^2.10.6",
     "validator": "^4.0.5"
+  },
+  "devDependencies": {
+    "istanbul-harmony": "^0.3.16",
+    "koa": "^1.0.0",
+    "koa-router": "^5.2.1",
+    "mocha": "^2.3.3",
+    "should": "^7.1.0",
+    "supertest": "^1.1.0"
   }
 }
