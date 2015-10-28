@@ -20,11 +20,14 @@
     "validator": "^4.0.5"
   },
   "devDependencies": {
+    "co": "^4.6.0",
     "istanbul-harmony": "^0.3.16",
     "koa": "^1.0.0",
+    "koa-better-body": "^1.0.17",
+    "koa-qs": "^2.0.0",
     "koa-router": "^5.2.1",
     "mocha": "^2.3.3",
-    "should": "^7.1.0",
+    "should": "^7.1.1",
     "supertest": "^1.1.0"
   }
 }
