@@ -13,12 +13,16 @@
     "validation",
     "filters"
   ],
-  "author": "Srinivas Iyer",
+  "repository": "srinivasiyer/koa-validation",
+  "author": {
+    "name": "Srinivas Iyer",
+    "email": "srinivasiyer87@gmail.com"
+  },
   "license": "ISC",
   "dependencies": {
     "co-fs-extra": "^1.1.0",
     "mime-types": "^2.1.7",
-    "moment": "^2.10.6",
+    "moment-timezone": "^0.4.1",
     "validator": "^4.0.5"
   },
   "devDependencies": {
