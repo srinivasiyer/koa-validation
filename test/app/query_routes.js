@@ -40,12 +40,12 @@ module.exports = function(app, router){
                 shortword: 'maxLength:10',
                 tendigits: { regex: [/^\d{10}$/g] },
                 watch: 'timezone',
-                website: 'url',
+                website: 'url'
             },
             {
                 'name.required': 'The name field is a required one'
             }
-        )
+        );
 
         if(this.validationErrors){
             this.status = 422;
@@ -74,7 +74,7 @@ module.exports = function(app, router){
                 mdword: 'md5',
                 hexword: 'hex:sha256'
             }
-        })
+        });
 
         this.body = this.query;
     });
@@ -97,10 +97,10 @@ module.exports = function(app, router){
                 mdword: 'md5',
                 hexword: 'hex:sha256'
             }
-        })
+        });
 
         this.body = this.query;
-    })
+    });
 
     app.use(router.routes()).use(router.allowedMethods());
-}
+};
