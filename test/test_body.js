@@ -48,7 +48,7 @@ describe('Koa request body validation', function(){
         .send({ genres: 'Pop' })
         .send({ grade: 'no' })
         .send({ nickname: 1234 })
-        .send({ nospaces: 1234 })
+        .send({ nospaces: '2345&^$' })
         .send({ email: 'lucky@name' })
         .send({ alphanum: '&*^%' })
         .send({ password: 'abnsd' })

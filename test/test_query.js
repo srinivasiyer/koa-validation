@@ -48,7 +48,7 @@ describe('Koa URL Query Validation', function(){
         .query({ genres: 'Pop' })
         .query({ grade: 'no' })
         .query({ nickname: 1234 })
-        .query({ nospaces: 1234 })
+        .query({ nospaces: '124%6$' })
         .query({ email: 'lucky@name' })
         .query({ alphanum: '&*^%' })
         .query({ password: 'abnsd' })

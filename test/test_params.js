@@ -3,7 +3,7 @@ var request = require('supertest')
 
 describe('Koa URL params validation', function(){
     it('should throw an error on all fields when values are incorrect', function(done){
-        request(app.listen()).post('/params/dhsud823893ej8/post/ajdii')
+        request(app.listen()).post('/params/dhsud823893ej**$8/post/ajdii')
         .end(function(err, res){
             res.statusCode.should.equal(422);
             res.body.should.be.an.Array;
