@@ -1,6 +1,6 @@
 {
   "name": "koa-validation",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "The Koa Validation is a single point validation library that enables you to validate params, body, queries, files and headers",
   "main": "lib/validate.js",
   "scripts": {
@@ -10,8 +10,13 @@
   },
   "keywords": [
     "koa",
+    "middleware",
     "validation",
-    "filters"
+    "filters",
+    "validator",
+    "koa-validation",
+    "koa validation",
+    "file validation"
   ],
   "repository": "srinivasiyer/koa-validation",
   "author": {
