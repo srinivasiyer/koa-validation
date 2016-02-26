@@ -93,7 +93,7 @@ router.post('/', function *(){
 
 ##File Validations
 
-```
+```js
 
 var app = require('koa')();
 var router = (new require('koa-router'))();
