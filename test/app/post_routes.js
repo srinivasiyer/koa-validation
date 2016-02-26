@@ -100,7 +100,7 @@ module.exports = function(app, router){
         });
 
         this.body = this.request.body.fields || this.request.body || {};
-    })
+    });
 
     app.use(router.routes()).use(router.allowedMethods());
-}
+};
