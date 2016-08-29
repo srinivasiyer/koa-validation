@@ -164,6 +164,71 @@ describe('Koa request body validation', function(){
         });
     });
 
+
+    it('Should throw errors when required null values are sent', function(done){
+        request(app.listen()).put('/')
+        .send({ name: null })
+        .send({ bar: 'barbaz' })
+        .send({ baz: 'foobar' })
+        .send({ foo: null })
+        .send({ gandalf: null })
+        .send({ teenage: 17 })
+        .send({ age: 25 })
+        .send({ barbaz: 'barbaz' })
+        .send({ bazbaz: 'bazbaz' })
+        .send({ date: '12232015' })
+        .send({ past: '2015-06-01' })
+        .send({ future: '2015-11-01' })
+        .send({ birthdate: '2016-12-25' })
+        .send({ gender: 'male' })
+        .send({ genres: 'jazz' })
+        .send({ grade: 'yes' })
+        .send({ nickname: 'srini' })
+        .send({ nospaces: 'this_is-what' })
+        .send({ email: 'lucky@strike.com' })
+        .send({ alphanum: 'abcd928921' })
+        .send({ password: 'abcd1234' })
+        .send({ iaccept: 1 })
+        .send({ partofit: 'became' })
+        .send({ notpartofit: 'forewarn' })
+        .send({ cpassword: 'abcd1234' })
+        .send({ spousegender: 'female' })
+        .send({ luckynum: 8974 })
+        .send({ thesaurus: 'dictionary' })
+        .send({ number: 1234 })
+        .send({ ipaddress: '192.168.0.1' })
+        .send({ object: '{ "foo": "bar" }' })
+        .send({ chocolates: 80 })
+        .send({ watts: 30 })
+        .send({ longword: 'This is a super long string which stretches beyond 25 charachters' })
+        .send({ shortword: 'lessthan10' })
+        .send({ tendigits: 1234567890 })
+        .send({ watch: 'asia/kolkata' })
+        .send({ website: 'srinivasiyer.com' })
+        .end(function(err, res){
+            res.statusCode.should.equal(422);
+            res.body.should.be.an.Array;
+            errorFields = {};
+            res.body.forEach(function(objs){
+                for(var o in objs){
+                    errorFields[o] = objs[o].rule;
+                }
+            });
+
+            errorFields.should.have.properties({
+                name: 'required',
+                girlfiend: 'requiredIf',
+                foo: 'requiredWith',
+                wife: 'requiredNotIf',
+                foobar: 'requiredWithAll',
+                gandalf: 'requiredWithout',
+                tyrion: 'requiredWithoutAll',
+            });
+
+            done();
+        });
+    });
+
     it('should return changed queries when before filters are applied', function(done){
 
         request(app.listen())
